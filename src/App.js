@@ -48,7 +48,7 @@ class Board extends Component {
       return;
     }
 
-    squares[i] = this.state.xIsNext ? 'X': '0';
+    squares[i] = this.state.xIsNext ? 'X': 'O';
     this.setState({
       squares,
       xIsNext: !this.state.xIsNext,
@@ -66,7 +66,7 @@ class Board extends Component {
     if (winner) {
       status = 'Winner ' + winner;
     } else {
-      status = 'Next player: ' + (this.state.xIsNext ? 'X' : '0');
+      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
 
     return (
@@ -78,14 +78,14 @@ class Board extends Component {
           {this.renderSquare(2)}
         </div>
         <div className="board-row">
+          {this.renderSquare(3)}
           {this.renderSquare(4)}
           {this.renderSquare(5)}
-          {this.renderSquare(6)}
         </div>
         <div className="board-row">
+          {this.renderSquare(6)}
           {this.renderSquare(7)}
           {this.renderSquare(8)}
-          {this.renderSquare(9)}
         </div>
       </div>
     );
